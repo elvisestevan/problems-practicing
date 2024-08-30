@@ -27,4 +27,25 @@ class ParserTest {
         val text = "dA" + "c".repeat(10) + "b".repeat(100) + "a".repeat(1000)
         assertEquals(10 + 100 + 1001, parser.repeatedCount(text))
     }
+
+    @Test
+    fun fibonacci() {
+        assertEquals(listOf(0, 1, 1, 2, 3, 5, 8, 13, 21, 34), parser.fibonacci())
+        assertEquals(listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), generateSequence(0) { it + 1 }.take(10).toList())
+    }
+
+    @Test
+    fun basketballScore() {
+        assertEquals(mapOf(Parser.Team.YELLOW to 85, Parser.Team.BLUE to 84), parser.basketballScore())
+    }
+
+    @Test
+    fun maxNumberOfSteps() {
+        assertEquals(75, parser.maxNumberOfSteps())
+    }
+
+    @Test
+    fun fastestStage() {
+        assertEquals(4, parser.fastestStage())
+    }
 }
